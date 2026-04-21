@@ -21,6 +21,8 @@ body{
     margin: 0;
     color: white;
     font-family: monospace;
+    margin-top: 25px;
+    font-size: 35px;
 }
 .navclas{
      position: fixed;
@@ -41,6 +43,7 @@ body{
     text-decoration: none;
     font-family: monospace;
     font-weight: bold;
+    font-size: 14px;
 }
 
 .menu a:hover{
@@ -54,4 +57,84 @@ body{
     gap: 25px;
     margin: 0;
     padding: 0;
+    margin-top: 19px;
+}
+
+.portada{
+    width: 100%;
+    height: 550px;
+    position: center;
+    margin-top: 120px;
+}
+
+.myv{
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
+.myv h2{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.myv p{
+    font-size: 17px;
+    font-family: monospace;
+    transition: all 0.3s ease;
+}
+
+.myv p:hover{
+    transform: scale(1.05);
+    color: rgb(14, 10, 214);
+    font-family:cursive;
+    font-size:19px ;
+    text-shadow: 
+     0 0 3px #210c99,
+        0 0 6px #0f2cad;
+}
+
+.piedPagina{
+    background: white;
+    color:black;
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    margin-top: 50px;
+    font-family: monospace;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.pReferencia a img{
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 10px;
+    transition: 0,3s;
+    border-radius: 10px;
+}
+
+.pReferencia a img:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 10px cyan;
+}
+
+.contacto{
+    text-align: center;
+}
+
+.redesSociales a img{
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 10px;
+    transition: 0,3s;
+    border-radius: 10px;
+    
+}
+
+.redesSociales a img:hover{
+    transform: scale(1.2);
+    filter: brightness(1.2);
+     box-shadow: 0 0 10px cyan;
 }
