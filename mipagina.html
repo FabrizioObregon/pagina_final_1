@@ -24,6 +24,127 @@
     <header>
         <img class="portada" src="portada.jpg" alt="">
     </header>
+    <h2 class="titulo-seccion">PRODUCTOS POPULARES</h2>
+    <div class="banner-popular">
+    <div class="contenido">
+        <div class="texto-izquierdo">
+            <h1 id="titulo-popular">Iphone 17 PRO MAX</h1>
+            <p id="desc-popular">Eleva tu experiencia móvil a la máxima potencia con el nuevo iPhone 17 Pro Max. Diseñado para
+                creadores, profesionales y quienes no aceptan menos que lo mejor, este dispositivo combina el rendimiento más
+                salvaje con un diseño revolucionario.
+            </p>
+            <button class="btn-ver">Ver Detalles</button>
+        </div>
+        <img id="img-popular" src="iphonepopular.png"> 
+    </div>
+
+    <div class="indicadores">
+        <span id="p0" class="punto activa">.</span>
+        <span id="p1" class="punto">.</span>
+    </div>
+</div>
+    </div>
+    <section class="productos-destacados">
+    <h2 class="titulo-seccion">Productos Recomendados</h2>
+    
+    <div class="contenedor-productos">
+        <div class="producto-card">
+            <img src="producto1.jpg" alt="Audífonos Pro"> <div class="info">
+                <span class="categoria">Audio</span>
+                <h3>Audífonos Gamer Razer Kraken V3-RGB</h3>
+                <p class="precio">S/ 180.00</p>
+                <p class="stock">Stock: <span>15 unidades</span></p>
+                <button class="btn-comprar">Agregar al carrito</button>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="producto2.jpg" alt="Mouse">
+            <div class="info">
+                <span class="categoria">Gaming</span>
+                <h3>Mouse Óptico Gamer HyperX Pulsefire Core-RGB</h3>
+                <p class="precio">S/ 85.00</p>
+                <p class="stock">Stock: <span>8 unidades</span></p>
+                <button class="btn-comprar">Agregar al carrito</button>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="producto3.jpg" alt="Teclado">
+            <div class="info">
+                <span class="categoria">Teclados</span>
+                <h3>Teclado Optico Razer Hunstman mini-RGB</h3>
+                <p class="precio">S/ 250.00</p>
+                <p class="stock">Stock: <span class="bajo-stock">2 unidades</span></p>
+                <button class="btn-comprar">Agregar al carrito</button>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="producto4.jpg" alt="Micrófono">
+            <div class="info">
+                <span class="categoria">Micrófonos</span>
+                <h3>Micrófono Blue Yeti V2</h3>
+                <p class="precio">S/ 320.00</p>
+                <p class="stock">Stock: <span>5 unidades</span></p>
+                <button class="btn-comprar">Agregar al carrito</button>
+            </div>
+        </div>
+        <div class="producto-card">
+            <img src="producto5.jpg" alt="Laptop">
+            <div class="info">
+                <span class="categoria">Laptops</span>
+                <h3>Laptop Lenovo "Legion-16GB RAM-512GB SSD-Intel i9 12500k</h3>
+                <p class="precio">S/ 2100.00</p>
+                <p class="stock">Stock: 10 unidades</p>
+                <button class="btn-comprar">Agregar al carrito</button>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="producto6.jpg" alt="">
+            <div class="info">
+                <span class="categoria">Audio</span>
+                <h3>Parlante Bluetooth</h3>
+                <p class="precio">S/ 150.00</p>
+                <p class="stock">Stock: 5 unidades</p>
+                <button class="btn-comprar">Agregar al carrito</button>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="producto7.jpg" alt="">
+            <div class="info">
+                <span class="categoria">Camaras</span>
+                <h3>Cámara de cine Sony FX30</h3>
+                <p class="precio">S/ 4500.00</p>
+                <p class="stock">Stock: 5 unidades</p>
+                <button class="btn-comprar">Agregar al carrito</button>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="producto8.jpg" alt="">
+            <div class="info">
+                <span class="categoria">Componentes</span>
+                <h3>Targeta Grafica GeForce RTX 5090 32GB</h3>
+                <p class="precio">S/ 1800.00</p>
+                <p class="stock">Stock: 4 unidades</p>
+                <button class="btn-comprar">Agregar al carrito</button>
+            </div>
+        </div>
+         <div class="producto-card">
+            <img src="producto9.jpg" alt="Mouse">
+            <div class="info">
+                <span class="categoria">Gaming</span>
+                <h3>MousePad Razer GigantusV2- RGB</h3>
+                <p class="precio">S/ 85.00</p>
+                <p class="stock">Stock: <span>8 unidades</span></p>
+                <button class="btn-comprar">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</section>
 
     <section class="myv">
          <h2>Misión</h2>
@@ -70,6 +191,41 @@
           Compra segura | Envíos a todo el Perú | Garantía
     </div>
 </footer>
+<script>
+    let contador = 1; 
+
+    function rotarBanner() {
+        let titulo = document.getElementById("titulo-popular");
+        let imagen = document.getElementById("img-popular");
+        // ESTA LÍNEA TE FALTA (Importante):
+        let descripcion = document.getElementById("desc-popular"); 
+        let p0 = document.getElementById("p0");
+        let p1 = document.getElementById("p1");
+
+        if (contador == 0) {
+            titulo.innerHTML = "Iphone 17 PRO MAX";
+            // AÑADE ESTO:
+            descripcion.innerHTML = "Eleva tu experiencia móvil a la máxima potencia con el nuevo iPhone 17 Pro Max. Diseñado para creadores, profesionales y quienes no aceptan menos que lo mejor, este dispositivo combina el rendimiento más salvaje con un diseño revolucionario. ";
+            imagen.src = "iphonepopular.png";
+            
+            p0.style.color = "cyan";
+            p1.style.color = "gray";
+            contador = 1;
+        } 
+        else {
+            titulo.innerHTML = "PS5";
+            // AÑADE ESTO:
+            descripcion.innerHTML = "¿Buscas la mejor experiencia de gaming sin gastar de más? La PlayStation 5 sigue siendo la reina de los hogares, ofreciendo una velocidad increíble y un catálogo de juegos exclusivos que te dejarán sin aliento. Es la consola ideal para disfrutar de la máxima calidad sin complicaciones.";
+            imagen.src = "ps5.jpg";
+            
+            p0.style.color = "gray";
+            p1.style.color = "cyan";
+            contador = 0;
+        }
+    }
+
+    setInterval(rotarBanner, 4000);
+</script>
 </body>
 <script src="javascript.js"></script>
 </html>
