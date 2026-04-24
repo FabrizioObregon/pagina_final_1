@@ -1,6 +1,5 @@
 body{
     margin: 0%;
-    height: 100vh;
     padding: 0;
 }
 .fondo{
@@ -17,12 +16,15 @@ body{
     z-index: -1;
 }
 
-.textoB h1{
-    margin: 0;
-    color: white;
-    font-family: monospace;
-    margin-top: 25px;
-    font-size: 35px;
+.textoB img{
+    height: 135px;
+    width: auto;
+    transition: 0.3s;
+    transform: translateY(20px);
+}
+
+.textoB img:hover{
+    transform: translateY(15px) scale(1.05);
 }
 .navclas{
      position: fixed;
@@ -34,6 +36,7 @@ body{
      align-items: center;
      z-index: 10;
      box-sizing: border-box;
+     height: 80px;
 }
 
 .menu a {
@@ -71,6 +74,7 @@ body{
     color: white;
     padding: 50px;
     text-align: center;
+    background-color: black;
 }
 .myv h2{
     font-size: 30px;
@@ -99,7 +103,7 @@ body{
     display: flex;
     justify-content: space-around;
     padding: 40px;
-    margin-top: 50px;
+    margin-top: 80px;
     font-family: monospace;
     flex-wrap: wrap;
     margin-bottom: 15px;
@@ -173,4 +177,68 @@ body{
     font-size: 13px;
     margin: 0px;
     color: black;
+}
+
+.video{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 40px;
+}
+
+.video video{
+    width: 1150px;
+    border-radius: 12px;
+     box-shadow: 0 0 20px greenyellow;
+}
+
+.video video:hover{
+    transform: scale(1.02);
+    transition: 0.3s;
+}
+
+.banner img{
+    width: 1000px;
+    height: 120px;
+    transition: transform 0.5s ease;
+}
+
+.banner{
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+    overflow: hidden;
+}
+
+.banner img:hover{
+    transform: scale(1.02);
+}
+
+.ubicacion{
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+    margin-bottom: 50px
+
+}
+
+.ubicacion h2{
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.mapa{
+    max-width: 900px;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.mapa iframe{
+    transition: all 0.3s ease;
+    margin-bottom:40px ;
+}
+
+.mapa iframe:hover{
+    transform:translateY(-5px);
 }
