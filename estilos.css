@@ -7,6 +7,10 @@ html, body {
     flex-direction: column;
 }
 
+:root{
+    --azul:#2979ff;
+}
+
 body {
     background-color: black; /* Esto ayuda a que si hay un micro-espacio, no desentone con el fondo */
     overflow-x: hidden;
@@ -61,10 +65,34 @@ body {
 
 .menu a:hover{
     transform: scale(1.1);
-    color: black;
+    color: rgb(255, 255, 255);
 } 
 
 .menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    margin-top: 19px;
+}
+
+.menu1 a {
+    color: rgb(11, 22, 167);
+    transition: transform 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.menu1 a:hover{
+    transform: scale(1.1);
+    color: black;
+} 
+
+.menu1 {
     list-style: none;
     display: flex;
     gap: 25px;
@@ -141,7 +169,7 @@ body {
 
 .piedPagina h3 {
     font-size: 16px; /* Títulos más pequeños */
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -171,7 +199,7 @@ body {
 
 .pReferencia a img:hover{
     transform: scale(1.1);
-    box-shadow: 0 0 10px cyan;
+    box-shadow: 0 0 10px var(--azul);
 }
 
 .pReferencia,
@@ -213,7 +241,7 @@ body {
 .redesSociales a img:hover{
     transform: scale(1.2);
     filter: brightness(1.2);
-     box-shadow: 0 0 10px cyan;
+     box-shadow: 0 0 10px var(--azul);
 }
 
 .copy{
@@ -236,11 +264,16 @@ body {
 }
 
 .productos-destacados {
-    padding: 30px 20px 50px 20px; 
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
     z-index: 5;
+    padding: 30px 20px 20px 20px;
+}
+
+.productos-destacados .titulo-seccion {
+    margin-top: 10px; /* acerca el título al banner */
+    margin-bottom: 15px;
 }
 
 .contenedor-productos {
@@ -252,7 +285,7 @@ body {
 
 .producto-card {
     background: rgba(0, 0, 0, 0.85); 
-    border: 2px solid cyan;
+    border: 2px solid var(--azul);
     border-radius: 20px;
     padding: 20px;
     width: 300px;           
@@ -266,7 +299,7 @@ body {
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .producto-card:hover {
-    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.7); /* Brillo cian */
+    box-shadow: 0px 0px 20px rgba(41, 121, 255, 0.7); /* Brillo cian */
     border-color: white; /* El borde cambia a blanco suavemente */
 }
 
@@ -303,7 +336,7 @@ body {
 
 
 .btn-comprar {
-    background: cyan;
+    background: var(--azul);
     color: black;
     border: none;
     padding: 8px;
@@ -324,28 +357,28 @@ body {
     text-align: center;       /* Lo centramos respecto a la página */
     font-size: 28px;
     font-weight: bold;
-    letter-spacing: 2px;      /* Espaciado entre letras para toque moderno */
+    letter-spacing: 2px;/* Espaciado entre letras para toque moderno */
+    margin-top: 100px;
     margin-bottom: 20px;      /* Espacio para que no toque el banner */
     font-family: sans-serif;
     text-transform: uppercase; /* Todo en mayúsculas como pediste */
 }
 
 .banner-popular {
-    background-color: rgb(255, 255, 255);
-    border: 2px solid cyan;
+   background-color: rgb(255, 255, 255);
+    border: 2px solid var(--azul);
     border-radius: 20px;
-    width: 80%;
-    margin: 40px auto; /* Centra el banner y le da espacio */
+    width: 85%;
+    margin: 100px auto 0 auto; /* Centrado con margen superior pequeño */
     padding: 20px;
-    border: 1px solid transparent; /* Preparamos un borde invisible */
-    transition: box-shadow 0.3s ease, border 0.3s ease; /* Solo animamos el brillo y el borde */
+    transition: box-shadow 0.3s ease, border 0.3s ease;
     cursor: pointer;
 }
 .banner-popular:hover {
     /* Un brillo cian suave y elegante */
-    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5); 
+    box-shadow: 0px 0px 20px rgba(41, 121, 255, 0.7); 
     /* Cambiamos el borde invisible por uno cian */
-    border: 1px solid cyan; 
+    border: 1px solid var(--azul); 
 }
 
 
@@ -363,7 +396,7 @@ body {
     width: 90%; /* La descripción puede ser un poco más corta que el título para que se vea ordenado */
 }
 .btn-ver {
-    background: cyan;
+    background: var(--azul);
     color: black;
     border: none;
     padding: 12px 28px;
@@ -375,8 +408,8 @@ body {
 }
 .btn-ver:hover {
     background-color: white;
-    color: cyan;
-    box-shadow: 0px 0px 15px cyan;
+    color: var(--azul);
+    box-shadow: 0px 0px 15px var(--azul);
     transform: scale(1.05); /* Se agranda un poquito */
 }
 
@@ -438,6 +471,24 @@ body {
     transition: 0.3s;
 }
 
+.video2{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 40px 40px 10px 40px;
+}
+
+.video2 video{
+    width: 1150px;
+    border-radius: 12px;
+     box-shadow: 0 0 30px rgb(247, 103, 0);
+}
+
+.video2 video:hover{
+    transform: scale(1.02);
+    transition: 0.3s;
+}
+
 .banner img{
     width: 1000px;
     height: 120px;
@@ -449,6 +500,27 @@ body {
     justify-content: center;
     margin: 40px;
     overflow: hidden;
+}
+
+.banner1 img{
+    width: 1000px;
+    height: 120px;
+    transition: transform 0.5s ease;
+}
+
+.banner1{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    overflow: hidden;
+}
+.banner1,
+.banner-mejorado {
+    margin: 0 auto 20px auto; /* sube el banner */
+}
+
+.banner1 img:hover{
+    transform: scale(1.02);
 }
 
 .banner img:hover{
@@ -483,3 +555,4 @@ body {
 .mapa iframe:hover{
     transform:translateY(-5px);
 }
+
