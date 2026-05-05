@@ -30,6 +30,10 @@ body {
     z-index: -1;
 }
 
+.fondo1{
+    background-color: black;
+}
+
 .textoB img{
     height: 135px;
     width: auto;
@@ -556,3 +560,29 @@ body {
     transform:translateY(-5px);
 }
 
+.nosotros{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+.card{
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px black;
+}
+
+.ubicon{
+    color: black;
+    font-family:monospace ;
+}
+
+.letracon{
+    color: black;
+    font-family: monospace;
+}
