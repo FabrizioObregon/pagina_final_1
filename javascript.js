@@ -31,3 +31,34 @@ let contador = 1;
     }
 
     setInterval(rotarBanner, 4000);
+
+    /* Ocultar / mostrar navbar en scroll solo en páginas con navbar fijo (index) */
+    (function(){
+        const navbars = Array.from(document.querySelectorAll('.custom-navbar, .navclas'));
+        const body = document.body;
+        if (!navbars.length || !body.classList.contains('has-fixed-navbar')) return;
+
+        let lastScrollY = window.scrollY || 0;
+        const threshold = 50; // px antes de activar
+        let ticking = false;
+
+        window.addEventListener('scroll', function(){
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const current = window.scrollY;
+                    if (current > lastScrollY && current > threshold) {
+                        // scrolldown -> ocultar todos los navbars encontrados
+                        navbars.forEach(nb => nb.classList.add('nav-hidden'));
+                        body.classList.add('navbar-hidden');
+                    } else if (current < lastScrollY) {
+                        // scrollup -> mostrar
+                        navbars.forEach(nb => nb.classList.remove('nav-hidden'));
+                        body.classList.remove('navbar-hidden');
+                    }
+                    lastScrollY = Math.max(current, 0);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    })();

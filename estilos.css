@@ -9,11 +9,24 @@ html, body {
 
 :root{
     --azul:#2979ff;
+    --nav-height: 90px;
 }
 
 body {
     background-color: black; /* Esto ayuda a que si hay un micro-espacio, no desentone con el fondo */
     overflow-x: hidden;
+    margin: 0;
+}
+
+/* Añadir padding sólo cuando la página tiene navbar fijo */
+body.has-fixed-navbar {
+    padding-top: var(--nav-height); /* Reserva espacio para el navbar fijo */
+    transition: padding-top 0.28s ease;
+}
+
+/* Cuando el navbar está oculto también quitamos el padding para que el contenido suba */
+body.has-fixed-navbar.navbar-hidden {
+    padding-top: 0;
 }
 
 .fondo{
@@ -44,72 +57,14 @@ body {
 .textoB img:hover{
     transform: translateY(15px) scale(1.05);
 }
-.navclas{
-     position: fixed;
-     top: 0;
-     width: 100%;
-     padding: 15px 40px;
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     z-index: 10;
-     box-sizing: border-box;
-     height: 80px;
-}
 
-.menu a {
-    color: white;
-    transition: transform 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    font-family: monospace;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.menu a:hover{
-    transform: scale(1.1);
-    color: rgb(255, 255, 255);
-} 
-
-.menu {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-    margin: 0;
-    padding: 0;
-    margin-top: 19px;
-}
-
-.menu1 a {
-    color: rgb(11, 22, 167);
-    transition: transform 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 19px;
-}
-
-.menu1 a:hover{
-    transform: scale(1.1);
-    color: black;
-} 
-
-.menu1 {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-    margin: 0;
-    padding: 0;
-    margin-top: 19px;
-}
 
 .portada{
     width: 100%;
     height: 550px;
     position: center;
-    margin-top: 120px;
+    margin-top: 35px;
+    padding-top: 0;
 }
 
 .myv{
@@ -197,7 +152,7 @@ body {
     height: 60px;
     object-fit: contain;
     margin: 10px;
-    transition: 0,3s;
+    transition: 0.3s;
     border-radius: 10px;
 }
 
@@ -237,7 +192,7 @@ body {
     height: 30px;
     object-fit: contain;
     margin: 10px;
-    transition: 0,3s;
+    transition: 0.3s;
     border-radius: 10px;
     
 }
@@ -367,24 +322,6 @@ body {
     font-family: sans-serif;
     text-transform: uppercase; /* Todo en mayúsculas como pediste */
 }
-
-.banner-popular {
-   background-color: rgb(255, 255, 255);
-    border: 2px solid var(--azul);
-    border-radius: 20px;
-    width: 85%;
-    margin: 100px auto 0 auto; /* Centrado con margen superior pequeño */
-    padding: 20px;
-    transition: box-shadow 0.3s ease, border 0.3s ease;
-    cursor: pointer;
-}
-.banner-popular:hover {
-    /* Un brillo cian suave y elegante */
-    box-shadow: 0px 0px 20px rgba(41, 121, 255, 0.7); 
-    /* Cambiamos el borde invisible por uno cian */
-    border: 1px solid var(--azul); 
-}
-
 
 
 #titulo-popular {
@@ -586,3 +523,171 @@ body {
     color: black;
     font-family: monospace;
 }
+
+.custom-navbar{
+    background: rgba(15,15,15,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid blue;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding: 2px 20px;
+    z-index: 2000;
+    transition: transform 0.28s ease;
+    will-change: transform;
+}
+
+/* Clase aplicada cuando queremos ocultar el navbar (scroll down) */
+.custom-navbar.nav-hidden,
+.navclas.nav-hidden{
+    transform: translateY(-100%);
+}
+
+.logo{
+    width: 110px;
+}
+
+.nav-link{
+    color: white !important;
+    font-size: 17px;
+    margin: 0 10px;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.nav-link:hover{
+    color: blue !important;
+    transform: translateY(-2px);
+}
+
+.buscador input{
+    border-radius: 20px;
+    color: var(--azul);
+}
+
+.buscador button{
+    border-radius: 20px;
+    color: var(--azul);
+}
+
+.buscar-btn{
+    border: 2px solid red;
+    color: var(--azul);
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.buscar-btn:hover{
+    background-color: red;
+    color: white;
+    box-shadow: 0 0 15px blue;
+}
+
+.carousel{
+    width: 90%;
+    margin: 40px auto;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.carousel-inner{
+    border-radius: 15px;
+}
+
+.carousel-item{
+    background-color: black;
+}
+
+.carousel-item img{
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* Estilo para el Navbar Simple (Páginas Secundarias) */
+.navclas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 50px; /* Reducimos padding vertical para que el logo mande el alto */
+    min-height: 90px;  /* Le damos una altura mínima sólida */
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--azul);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+    box-sizing: border-box;
+    transition: transform 0.28s ease;
+    will-change: transform;
+}
+
+.navclas .textoB {
+    display: flex;
+    align-items: center;
+    height: 100%; /* Ocupa todo el alto del nav */
+}
+
+.navclas .textoB img {
+    height: 80px; /* Aumentamos el tamaño (estaba en 60px) */
+    width: auto;
+    transform: translateY(0); /* IMPORTANTE: Quitamos el empuje hacia abajo */
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+/* Efecto hover limpio */
+.navclas .textoB img:hover {
+    transform: scale(1.1); /* Solo crece, no se mueve de posición */
+}
+
+.menu1 {
+    list-style: none; /* Quita los puntitos de la lista */
+    margin: 0;
+    padding: 0;
+}
+
+.menu1 li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid var(--azul);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.menu1 li a:hover {
+    background-color: var(--azul);
+    color: black;
+    box-shadow: 0 0 15px var(--azul);
+}
+
+.videoiphone{
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+    align-items: center;
+    width: 100%;
+}
+
+.videoiphone video{
+    width: 90%;
+    max-width: 500px;        /* Límite para que no se vea gigante en PC */
+    border-radius: 15px;     /* Bordes redondeados como tus tarjetas */
+    border: 2px solid white; /* Borde blanco para destacar */
+    box-shadow: 0 0 15px white; /* Efecto de brillo simple */
+    transition: all 0.4s ease;
+}
+
+.videoiphone video:hover {
+    transform: scale(1.02);  /* Crece un poquito */
+    box-shadow: 0 0 25px var(--azul); /* El brillo se intensifica */
+    filter: brightness(1.1); /* Se aclara ligeramente */
+}   
